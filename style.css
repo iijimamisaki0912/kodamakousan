@@ -1,0 +1,1247 @@
+/* ===========================
+   リセット
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"Noto Sans JP",sans-serif;
+    color:#333;
+    background:#f5f8fc;
+    line-height:1.8;
+
+}
+
+img{
+
+    display:block;
+    width:100%;
+
+}
+
+a{
+
+    text-decoration:none;
+    color:inherit;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+.container{
+
+    width:1200px;
+    margin:auto;
+
+}
+
+
+/* ===========================
+ヘッダー
+=========================== */
+
+header{
+
+    background:#fff;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+
+}
+
+.header-inner{
+
+    width:1200px;
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    height:110px;
+
+}
+
+.logo img{
+
+    height:65px;
+    width:auto;
+
+}
+
+.header-contact{
+
+    text-align:right;
+
+}
+
+.contact-text{
+
+    color:#0d5db8;
+
+    font-size:14px;
+
+}
+
+.header-contact h2{
+
+    color:#0d5db8;
+
+    font-size:42px;
+
+    font-weight:700;
+
+}
+
+.header-contact p{
+
+    color:#666;
+
+    font-size:14px;
+
+}
+
+
+/* ===========================
+ナビ
+=========================== */
+
+nav{
+
+    background:#0d5db8;
+
+}
+
+nav ul{
+
+    width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+}
+
+nav li{
+
+    flex:1;
+
+}
+
+nav a{
+
+    color:white;
+
+    display:block;
+
+    text-align:center;
+
+    padding:22px 0;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+/* ===========================
+スライダー
+=========================== */
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+
+    height:720px;
+
+    overflow:hidden;
+
+    background:#000;
+
+}
+
+.slides{
+    position:relative;
+    width:100%;
+    height:100%;
+}
+
+.slide{
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:720px;
+
+    opacity:0;
+
+    transition:opacity 1s ease;
+
+    z-index:1;
+}
+
+.slide.active{
+    opacity:1;
+    z-index:2;
+}
+.slide{
+
+    min-width:100%;
+
+    height:720px;
+
+}
+
+.slide img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+/* オーバーレイ */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+    z-index:1;
+
+}
+
+
+/* キャッチコピー */
+
+
+
+/* ===========================
+ヒーロー文字デザイン
+=========================== */
+
+.hero-text{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:100%;
+
+    text-align:center;
+
+    color:white;
+
+    z-index:5;
+
+    padding:20px;
+
+}
+
+
+/* 上下のライン */
+
+.hero-line{
+
+    width:80px;
+
+    height:2px;
+
+    background:rgba(255,255,255,.8);
+
+    margin:0 auto 25px;
+
+}
+
+
+/* キャッチコピー */
+
+.hero-catch{
+
+    font-size:22px;
+
+    font-weight:500;
+
+    letter-spacing:7px;
+
+    margin-bottom:18px;
+
+    text-shadow:0 3px 15px rgba(0,0,0,.6);
+
+}
+
+
+/* 会社名 */
+
+.hero-text h1{
+
+    font-family:
+        "Noto Serif JP",
+        serif;
+
+    font-size:82px;
+
+    font-weight:700;
+
+    letter-spacing:10px;
+
+    line-height:1.3;
+
+    margin:0;
+
+    text-shadow:
+        0 4px 15px rgba(0,0,0,.65),
+        0 0 30px rgba(0,0,0,.25);
+
+}
+
+
+/* 英字 */
+
+.hero-en{
+
+    font-family:Arial,sans-serif;
+
+    font-size:14px;
+
+    font-weight:400;
+
+    letter-spacing:8px;
+
+    margin-top:18px;
+
+    opacity:.9;
+
+    text-shadow:0 2px 10px rgba(0,0,0,.6);
+
+}
+
+
+/* 下のライン */
+
+.hero-text .hero-en + .hero-line{
+
+    margin-top:25px;
+
+    margin-bottom:0;
+
+}
+
+/* 矢印 */
+
+.prev,
+.next{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:rgba(255,255,255,.8);
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    z-index:20;
+
+}
+
+.prev{
+
+    left:40px;
+
+}
+
+.next{
+
+    right:40px;
+
+}
+
+.prev:hover,
+.next:hover{
+
+    background:white;
+
+}
+
+
+/* ドット */
+
+.dots{
+
+    position:absolute;
+
+    bottom:35px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    gap:15px;
+
+    z-index:10;
+
+}
+
+.dot{
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:white;
+
+    opacity:.5;
+
+    cursor:pointer;
+
+}
+
+.dot.active{
+
+    opacity:1;
+
+    background:#0d5db8;
+
+}
+
+
+/* ===========================
+会社概要
+=========================== */
+
+.about{
+
+    padding:90px 0;
+
+}
+
+.section-title{
+
+    margin-bottom:50px;
+
+}
+
+.section-title h2{
+
+    font-size:42px;
+
+    border-left:8px solid #0d5db8;
+
+    padding-left:18px;
+
+}
+
+.about-wrapper{
+
+    display:flex;
+
+    gap:40px;
+
+}
+
+
+/* テーブル */
+
+.about-table{
+
+    flex:2;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+th{
+
+    width:220px;
+
+    background:#edf4ff;
+
+    font-size:18px;
+
+    padding:22px;
+
+    border:1px solid #ddd;
+
+    text-align:left;
+
+}
+
+td{
+
+    border:1px solid #ddd;
+
+    padding:22px;
+
+    font-size:17px;
+
+}
+
+.tel{
+
+    color:#0d5db8;
+
+    font-weight:bold;
+
+    font-size:30px;
+
+}
+
+
+/* ===========================
+右側
+=========================== */
+
+.side-box{
+
+    width:360px;
+
+}
+
+.call-box{
+
+    background:white;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    margin-bottom:35px;
+
+}
+
+.call-box h3{
+
+    margin:0 0 15px;
+
+    font-size:32px;
+
+    color:#0d5db8;
+
+}
+
+.call-box p{
+
+    font-size:15px;
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+
+}
+
+.mail-link{
+
+    display:block;
+
+    color:#0d5db8;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    overflow-wrap:anywhere;
+
+}
+
+.map-box{
+
+    background:white;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    padding:25px;
+
+}
+
+.map-box h3{
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+.map-box iframe{
+
+    width:100%;
+    height:300px;
+    border:none;
+    border-radius:10px;
+
+}
+/*====================================
+施工実績
+====================================*/
+
+.works{
+
+    padding:110px 0;
+
+    background:#eef5fc;
+
+}
+
+
+/* 見出し */
+
+.works .section-title{
+
+    margin-bottom:60px;
+
+}
+
+
+/* メイン */
+
+.works-intro{
+
+    display:grid;
+
+    grid-template-columns:1.05fr .95fr;
+
+    background:white;
+
+    box-shadow:0 15px 45px rgba(0,0,0,.08);
+
+    margin-bottom:45px;
+
+}
+
+
+/* 写真 */
+
+.works-image{
+
+    position:relative;
+
+    min-height:520px;
+
+    overflow:hidden;
+
+}
+
+.works-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform .6s ease;
+
+}
+
+.works-intro:hover .works-image img{
+
+    transform:scale(1.04);
+
+}
+
+
+/* 写真の上の1988 */
+
+.works-image-label{
+
+    position:absolute;
+
+    left:30px;
+
+    bottom:30px;
+
+    width:110px;
+
+    height:110px;
+
+    background:rgba(13,93,184,.92);
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.works-image-label span{
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+}
+
+.works-image-label strong{
+
+    font-size:38px;
+
+    line-height:1;
+
+}
+
+
+/* 文章 */
+
+.works-text{
+
+    padding:65px 60px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.works-subtitle{
+
+    color:#0d5db8;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    margin-bottom:18px;
+
+}
+
+.works-text h3{
+
+    font-size:34px;
+
+    line-height:1.5;
+
+    color:#17365d;
+
+    margin-bottom:30px;
+
+}
+
+.works-text p{
+
+    color:#666;
+
+    font-size:15px;
+
+    line-height:2;
+
+    margin-bottom:18px;
+
+}
+
+
+/* ボタン */
+
+.works-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    width:270px;
+
+    margin-top:15px;
+
+    padding:15px 22px;
+
+    background:#0d5db8;
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.works-button span{
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+.works-button:hover{
+
+    background:#0a478d;
+
+}
+
+.works-button:hover span{
+
+    transform:translateX(5px);
+
+}
+
+
+/* 3つのポイント */
+
+.works-points{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    margin-bottom:55px;
+
+}
+
+.works-point{
+
+    background:white;
+
+    padding:35px 30px;
+
+    display:flex;
+
+    gap:22px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+
+    border-top:3px solid #0d5db8;
+
+}
+
+.point-number{
+
+    color:#0d5db8;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+.works-point h4{
+
+    color:#17365d;
+
+    font-size:19px;
+
+    margin-bottom:10px;
+
+}
+
+.works-point p{
+
+    color:#777;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+
+/* 最後のメッセージ */
+
+.works-message{
+
+    text-align:center;
+
+    padding:45px 20px;
+
+    border-top:1px solid #d5e1ef;
+
+    border-bottom:1px solid #d5e1ef;
+
+}
+
+.works-message p{
+
+    color:#0d5db8;
+
+    font-size:17px;
+
+    letter-spacing:1px;
+
+    margin-bottom:10px;
+
+}
+
+.works-message strong{
+
+    color:#17365d;
+
+    font-size:23px;
+
+}
+
+
+/*====================================
+施工実績 レスポンシブ
+====================================*/
+
+@media(max-width:1200px){
+
+    .works-intro{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .works-image{
+
+        height:450px;
+
+        min-height:0;
+
+    }
+
+    .works-text{
+
+        padding:50px 45px;
+
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .works{
+
+        padding:80px 0;
+
+    }
+
+    .works-intro{
+
+        display:block;
+
+    }
+
+    .works-image{
+
+        height:300px;
+
+    }
+
+    .works-text{
+
+        padding:40px 25px;
+
+    }
+
+    .works-text h3{
+
+        font-size:27px;
+
+    }
+
+    .works-text p{
+
+        font-size:14px;
+
+    }
+
+    .works-points{
+
+        grid-template-columns:1fr;
+
+        gap:15px;
+
+    }
+
+    .works-point{
+
+        padding:25px 20px;
+
+    }
+
+    .works-message strong{
+
+        font-size:18px;
+
+    }
+
+}
+
+
+
+
+
+/*====================================
+フッター
+====================================*/
+
+footer{
+
+    background:#0d2b55;
+    color:white;
+    padding-top:70px;
+
+}
+
+.footer-inner{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    padding-bottom:60px;
+
+}
+
+.footer-inner h3{
+
+    font-size:30px;
+    margin-bottom:20px;
+
+}
+
+.footer-inner p{
+
+    color:#ddd;
+    line-height:2;
+
+}
+
+.footer-inner ul{
+
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+
+}
+
+.footer-inner li a{
+
+    color:white;
+    transition:.3s;
+
+}
+
+.footer-inner li a:hover{
+
+    color:#4da3ff;
+
+}
+
+.copy{
+
+    border-top:1px solid rgba(255,255,255,.2);
+    text-align:center;
+    padding:25px 0;
+    color:#ccc;
+}
+
+
+
+/*====================================
+レスポンシブ
+====================================*/
+
+@media(max-width:1200px){
+
+.container{
+
+    width:90%;
+
+}
+
+.header-inner{
+
+    width:90%;
+
+}
+
+nav ul{
+
+    width:90%;
+
+}
+
+.works-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.strength-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.about-wrapper{
+
+    flex-direction:column;
+
+}
+
+.side-box{
+
+    width:100%;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+
+    height:500px;
+
+}
+
+.hero-text h1{
+
+    font-size:42px;
+
+    letter-spacing:5px;
+
+}
+
+.hero-catch{
+
+    font-size:14px;
+
+    letter-spacing:4px;
+
+}
+
+.hero-en{
+
+    font-size:10px;
+
+    letter-spacing:5px;
+
+}
+
+.hero-text p{
+
+    font-size:18px;
+
+}
+
+.header-inner{
+
+    flex-direction:column;
+    height:auto;
+    padding:20px 0;
+
+}
+
+.header-contact{
+
+    margin-top:20px;
+    text-align:center;
+
+}
+
+nav ul{
+
+    flex-direction:column;
+
+}
+
+.works-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.strength-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.contact h2{
+
+    font-size:30px;
+
+}
+
+.contact-btn{
+
+    font-size:24px;
+    padding:18px 35px;
+
+}
+
+.footer-inner{
+
+    flex-direction:column;
+    gap:40px;
+
+}
+
+}
